@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <main className={`${manrope.variable}`}>
             <Header />
             <Component {...pageProps} />
-            <Footer />
+            {/* <Footer /> */}
         </main>
     )
 }

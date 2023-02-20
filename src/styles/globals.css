@@ -10,7 +10,7 @@
         @apply text-[15px] leading-[25px];
     }
     h1 {
-        @apply font-sans text-[56px] leading-[58px] tracking-[2px] uppercase;
+        @apply font-sans text-[36px] leading-[40px] tracking-[1.28px] md:text-[56px] md:leading-[58px] md:tracking-[2px] uppercase;
     }
     h2 {
         @apply font-sans text-[40px] leading-[44px] tracking-[1.5px] uppercase;
@@ -30,6 +30,12 @@
 }
 
 @layer components {
+    .categories-text {
+        @apply text-[15px] uppercase leading-[20px] tracking-[1.07px] font-bold;
+    }
+    .bg-transparent {
+        background-color: transparent;
+    }
     .main-padding {
         @apply px-[24px] md:px-[39px] xl:px-0;
     }

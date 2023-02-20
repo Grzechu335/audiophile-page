@@ -12,6 +12,7 @@ module.exports = {
             'color-gray-dark': '#f1f1f1',
             'color-gray-light': '#fafafa',
             'color-dark': '#101010',
+            'color-gray-button': '#4c4c4c',
             'color-black': '#000',
             'color-white': '#fff',
         },
