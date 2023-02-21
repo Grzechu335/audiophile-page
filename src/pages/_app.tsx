@@ -3,6 +3,7 @@ import Header from '@/components/organisms/Header'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Manrope } from '@next/font/google'
+import BestGear from '@/components/molecules/BestGear'
 
 const manrope = Manrope({
     subsets: ['latin'],
@@ -14,7 +15,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <main className={`${manrope.variable}`}>
             <Header />
             <Component {...pageProps} />
-            {/* <Footer /> */}
+            <BestGear />
+            <Footer />
         </main>
     )
 }
