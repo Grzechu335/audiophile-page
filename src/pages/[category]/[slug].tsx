@@ -10,14 +10,13 @@ import Params from '@/shared/interfaces/Params'
 import { Product } from '@/shared/interfaces/Product'
 import { getProductBySlug, getProductPaths } from '@/utils/product'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
-import Image from 'next/image'
 import React from 'react'
 
 const ProductItem: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
     product,
 }) => {
     return (
-        <div className="mt-[96px] w-full">
+        <div className="w-full">
             <div className="max-w-screen-xl mx-auto main-padding">
                 <GoBackButton />
                 <div className="grid md:grid-cols-2 gap-[125px] mt-[56px]">

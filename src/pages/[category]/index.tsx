@@ -14,7 +14,7 @@ const ProductsPage: React.FC<
             <Head>
                 <title>Audiophile - products category</title>
             </Head>
-            <main className="mt-[96px]">
+            <main>
                 <CategoryPage products={products} />
             </main>
         </>

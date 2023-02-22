@@ -8,22 +8,26 @@ const OtherProductItem: React.FC<Other> = ({ name, image, slug }) => {
     return (
         <div
             key={name}
-            className="flex flex-col space-y-[32px] items-center"
+            className="flex flex-col space-y-[32px] items-center w-full"
         >
-            <Image
-                src={image.desktop}
-                alt="image"
-                width={315}
-                height={318}
-                className="hidden rounded-lg xl:block"
-            />
-            <Image
-                src={image.tablet}
-                alt="image"
-                width={223}
-                height={471}
-                className="hidden rounded-lg md:block xl:hidden"
-            />
+            <div className="flex justify-center w-full rounded-lg bg-color-gray-dark">
+                <Image
+                    src={image.desktop}
+                    alt="image"
+                    width={315}
+                    height={318}
+                    className="hidden rounded-lg xl:block"
+                />
+            </div>
+            <div className="flex justify-center w-full rounded-lg bg-color-gray-dark">
+                <Image
+                    src={image.tablet}
+                    alt="image"
+                    width={223}
+                    height={471}
+                    className="hidden rounded-lg md:block xl:hidden"
+                />
+            </div>
             <Image
                 src={image.mobile}
                 alt="image"

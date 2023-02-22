@@ -12,9 +12,9 @@ export type OtherProductsProps = {
 
 const OtherProducts: React.FC<OtherProductsProps> = ({ others }) => {
     return (
-        <div className="flex flex-col items-center mt-[160px]">
+        <div className="flex flex-col mt-[160px]">
             <h3>You May Also Like</h3>
-            <div className="grid md:grid-cols-3 space-y-[32px] md:space-y-0 md:space-x-[11px]  xl:space-x-[30px] mt-[64px]">
+            <div className="grid md:grid-cols-3 space-y-[32px] md:space-y-0 gap-[80px] md:gap-[10px] xl:gap-[30px] mt-[64px]">
                 {others.map((other, i) => (
                     <OtherProductItem
                         key={i}

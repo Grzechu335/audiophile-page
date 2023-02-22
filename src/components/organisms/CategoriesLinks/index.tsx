@@ -1,7 +1,5 @@
-import ButtonSimple from '@/components/atoms/ButtonSimple'
 import CategoryLink from '@/components/molecules/CategoryLink'
 import { links } from '@/utils/links'
-import Image from 'next/image'
 import React from 'react'
 
 const CategoriesLinks = () => {

@@ -12,7 +12,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ products }) => {
     const router = useRouter()
     return (
         <main>
-            <div className="w-full mt-[96px] bg-color-black">
+            <div className="w-full bg-[#181818]">
                 <div className="max-w-screen-xl mx-auto main-padding py-[32px] md:py-[105px] xl:py-[98px] text-center">
                     {/* Header */}
                     <h2 className="uppercase text-color-white">
