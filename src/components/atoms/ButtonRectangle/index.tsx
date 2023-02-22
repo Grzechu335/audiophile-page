@@ -2,15 +2,15 @@ import React from 'react'
 import clsx from 'clsx'
 
 interface ButtonProps {
-    variant: 'primary' | 'secondary' | 'transparent'
+    variant?: 'primary' | 'secondary' | 'transparent'
     children?: React.ReactNode
 }
 
-const Button: React.FC<ButtonProps> = ({ variant, children }) => {
+const Button: React.FC<ButtonProps> = ({ variant = 'primary', children }) => {
     return (
         <button
             className={clsx(
-                'px-[29px] py-[12px] focus:outline-none cursor-pointer uppercase font-bold mt-[28px] md:mt-[40px] relative',
+                'px-[29px] py-[12px] focus:outline-none cursor-pointer uppercase font-bold relative',
                 {
                     'bg-color-orange-dark text-color-white hover:bg-color-orange-light':
                         variant === 'primary',

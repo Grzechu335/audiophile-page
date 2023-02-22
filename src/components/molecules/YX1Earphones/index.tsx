@@ -4,6 +4,7 @@ import React from 'react'
 import YX1DesktopBackground from '/public/images/home/desktop/image-earphones-yx1.jpg'
 import YX1TabletBackground from '/public/images/home/tablet/image-earphones-yx1.jpg'
 import YX1MobileBackground from '/public/images/home/mobile/image-earphones-yx1.jpg'
+import Link from 'next/link'
 
 const YX1Earphones: React.FC = () => {
     return (
@@ -24,8 +25,10 @@ const YX1Earphones: React.FC = () => {
                 className="rounded-lg md:hidden"
             />
             <div className="bg-color-gray-dark px-[24px] py-[41px] md:py-[101px] md:px-[41px] xl:px-[95px] rounded-lg">
-                <h4>YX1 Earphones</h4>
-                <Button variant="transparent">See Product</Button>
+                <h4 className="mb-[32px]">YX1 Earphones</h4>
+                <Link href="earphones/yx1-earphones">
+                    <Button variant="transparent">See Product</Button>
+                </Link>
             </div>
         </div>
     )

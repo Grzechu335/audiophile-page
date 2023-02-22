@@ -4,11 +4,12 @@ import React from 'react'
 type NavItemProps = {
     text: string
     url: string
+    id: number
 }
 
-const NavLinkItem: React.FC<NavItemProps> = ({ text, url }) => {
+const NavLinkItem: React.FC<NavItemProps> = ({ text, url, id }) => {
     return (
-        <Link href={url}>
+        <Link href={id === 1 ? '/' : `${url}`}>
             <li className="cursor-pointer hover:text-color-orange-dark uppercase font-[700]">
                 {text}
             </li>

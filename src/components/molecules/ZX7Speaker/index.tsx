@@ -4,6 +4,7 @@ import React from 'react'
 import ZX7DesktopBackground from '/public/images/home/desktop/image-speaker-zx7.jpg'
 import ZX7TabletBackground from '/public/images/home/tablet/image-speaker-zx7.jpg'
 import ZX7MobileBackground from '/public/images/home/mobile/image-speaker-zx7.jpg'
+import Link from 'next/link'
 
 const ZX7Speaker = () => {
     return (
@@ -27,8 +28,10 @@ const ZX7Speaker = () => {
                 fill
             />
             <div className="relative">
-                <h4>ZX7 Speaker</h4>
-                <Button variant="transparent">See Product</Button>
+                <h4 className="mb-[32px]">ZX7 Speaker</h4>
+                <Link href="speakers/zx7-speaker">
+                    <Button variant="transparent">See Product</Button>
+                </Link>
             </div>
         </div>
     )

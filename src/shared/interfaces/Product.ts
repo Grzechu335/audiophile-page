@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image'
+
 export interface Product {
     id: number
     slug: string
@@ -5,7 +7,7 @@ export interface Product {
     image: CategoryImage
     category: string
     categoryImage: CategoryImage
-    new: boolean
+    isNew: boolean
     price: number
     description: string
     features: string
@@ -14,10 +16,14 @@ export interface Product {
     others: Other[]
 }
 
+export interface ProductAsProp {
+    product: Product
+}
+
 export interface CategoryImage {
-    mobile: string
-    tablet: string
-    desktop: string
+    mobile: StaticImageData | string
+    tablet: StaticImageData | string
+    desktop: StaticImageData | string
 }
 
 export interface Gallery {

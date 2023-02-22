@@ -7,7 +7,7 @@
         @apply font-sans;
     }
     body {
-        @apply text-[15px] leading-[25px] bg-color-gray-light;
+        @apply text-[15px] leading-[25px];
     }
     h1 {
         @apply font-bold font-sans text-[36px] leading-[40px] tracking-[1.28px] md:text-[56px] md:leading-[58px] md:tracking-[2px] uppercase;
@@ -43,7 +43,7 @@
         @apply px-[24px] md:px-[39px] xl:px-0;
     }
     .custom-overline {
-        @apply text-[14px] uppercase leading-[19px] tracking-[10px];
+        @apply text-[14px] uppercase leading-[19px] tracking-[10px] font-bold;
     }
     .custom-sub-title {
         @apply uppercase text-[13px] leading-[25px] tracking-[1px];

@@ -8,6 +8,7 @@ const FooterLinks: React.FC = () => {
             {links.map(({ id, ...props }) => (
                 <NavLinkItem
                     key={id}
+                    id={id}
                     {...props}
                 />
             ))}

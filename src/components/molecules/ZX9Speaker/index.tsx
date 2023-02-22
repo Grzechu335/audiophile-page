@@ -4,6 +4,7 @@ import React from 'react'
 import ZX9DesktopBackground from './Backgrounds/Desktop'
 import ZX9TabletBackground from './Backgrounds/Tablet'
 import ZX9MobileBackground from './Backgrounds/Mobile'
+import Link from 'next/link'
 
 const ZX9Speaker: React.FC = () => {
     return (
@@ -19,11 +20,13 @@ const ZX9Speaker: React.FC = () => {
                 <h1 className="text-color-white">
                     ZX9 <br /> Speaker
                 </h1>
-                <p className="text-color-white mt-[24px]">
+                <p className="text-color-white mt-[24px] mb-[24px] md:mb-[40px]">
                     Upgrade to premium speakers that are phenomenally built to
                     deliver truly remarkable sound.
                 </p>
-                <Button variant="secondary">See product</Button>
+                <Link href="speakers/zx9-speaker">
+                    <Button variant="secondary">See product</Button>
+                </Link>
             </div>
         </div>
     )

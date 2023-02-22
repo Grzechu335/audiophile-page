@@ -20,7 +20,20 @@ module.exports = {
             fontFamily: {
                 sans: ['var(--font-manrope)'],
             },
+            gridTemplateAreas: {
+                'gallery-layout-wide': [
+                    'first first third third third',
+                    'second second third third third',
+                ],
+                'gallery-layout-slim': ['first', 'second', 'third', 'third'],
+            },
+        },
+        variants: {
+            gridTemplateAreas: ['responsive'],
         },
     },
-    plugins: [require('tailwindcss-breakpoints-inspector')],
+    plugins: [
+        require('tailwindcss-breakpoints-inspector'),
+        require('@savvywombat/tailwindcss-grid-areas'),
+    ],
 }
