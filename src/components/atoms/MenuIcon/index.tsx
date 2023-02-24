@@ -1,23 +1,23 @@
-import React from 'react'
+import { useAppDispatch } from '@/hooks/redux'
+import { navStatus, setCart, setNav, toggleNav } from '@/store/UISlice'
+import { useRouter } from 'next/router'
+import React, { useEffect } from 'react'
 import { HamburgerSliderReverse } from 'react-animated-burgers'
+import { useSelector } from 'react-redux'
 
-type MenuIconProps = {
-    navToggler: () => void
-    isNav: boolean
-}
+const MenuIcon: React.FC = () => {
+    const dispatch = useAppDispatch()
+    const isNavOpen = useSelector(navStatus)
+    const { query } = useRouter()
 
-const MenuIcon: React.FC<MenuIconProps> = ({ navToggler, isNav }) => {
+    useEffect(() => {
+        dispatch(setNav(false))
+    }, [query])
     return (
-        // <Menu
-        //     size={25}
-        //     fill="white"
-        //     onClick={navToggler}
-        //     className="cursor-pointer hover:fill-color-orange-dark xl:hidden mr-0 md:mr-[32px] xl:mr-0"
-        // />
         <div className="xl:hidden mr-0 md:mr-[32px] xl:mr-0 cursor-pointer">
             <HamburgerSliderReverse
-                isActive={isNav}
-                toggleButton={navToggler}
+                isActive={isNavOpen}
+                toggleButton={() => dispatch(toggleNav())}
                 buttonWidth={25}
                 barColor="#FFF"
             />

@@ -21,9 +21,9 @@ export interface ProductAsProp {
 }
 
 export interface CategoryImage {
-    mobile: StaticImageData | string
-    tablet: StaticImageData | string
-    desktop: StaticImageData | string
+    mobile: StaticImageData
+    tablet: StaticImageData
+    desktop: StaticImageData
 }
 
 export interface Gallery {

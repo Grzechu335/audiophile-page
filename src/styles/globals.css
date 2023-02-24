@@ -7,7 +7,7 @@
         @apply font-sans;
     }
     body {
-        @apply text-[15px] leading-[25px] relative;
+        @apply text-[15px] leading-[25px] relative overflow-x-hidden;
     }
     h1 {
         @apply font-bold font-sans text-[36px] leading-[40px] tracking-[1.28px] md:text-[56px] md:leading-[58px] md:tracking-[2px] uppercase;

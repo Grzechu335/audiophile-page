@@ -1,15 +1,14 @@
+import { useAppDispatch } from '@/hooks/redux'
+import { toggleNav } from '@/store/UISlice'
 import React from 'react'
 import CategoriesLinks from '../CategoriesLinks'
 
-type MobileNavProps = {
-    navToggler: () => void
-}
-
-const MobileNav: React.FC<MobileNavProps> = ({ navToggler }) => {
+const MobileNav: React.FC = () => {
+    const dispatch = useAppDispatch()
     return (
         <div
             className="absolute top-[96px] left-0 w-full h-full bg-color-black/50 z-[100] xl:hidden"
-            onClick={navToggler}
+            onClick={() => dispatch(toggleNav())}
         >
             <div
                 className="bg-color-white pt-[84px] pb-[35px] md:pb-[67px] rounded-b-lg"

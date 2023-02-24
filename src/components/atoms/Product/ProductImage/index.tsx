@@ -1,30 +1,32 @@
-import { Product } from '@/shared/interfaces/Product'
+import { CategoryImage } from '@/shared/interfaces/Product'
 import Image from 'next/image'
 import React from 'react'
 
 type ProductImageProps = {
-    product: Product
+    images: CategoryImage
 }
 
-const ProductImage: React.FC<ProductImageProps> = ({ product }) => {
+const ProductImage: React.FC<ProductImageProps> = ({
+    images: { desktop, mobile, tablet },
+}) => {
     return (
         <div className="relative rounded-lg bg-color-gray-dark">
             <Image
-                src={product.image.desktop}
+                src={desktop}
                 alt="speaker"
                 width={540}
                 height={560}
                 className="hidden rounded-lg xl:block"
             />
             <Image
-                src={product.image.tablet}
+                src={tablet}
                 alt="speaker"
                 width={540}
                 height={560}
                 className="hidden rounded-lg md:block xl:hidden"
             />
             <Image
-                src={product.image.mobile}
+                src={mobile}
                 alt="speaker"
                 width={327}
                 height={327}

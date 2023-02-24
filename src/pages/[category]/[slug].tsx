@@ -1,11 +1,4 @@
-import GoBackButton from '@/components/atoms/GoBackButton'
-import ProductDescription from '@/components/atoms/Product/ProductDescription'
-import ProductFeatures from '@/components/atoms/Product/ProductFeatures'
-import ProductImage from '@/components/atoms/Product/ProductImage'
-import ProductIncludes from '@/components/atoms/Product/ProductIncludes'
-import CategoriesLinks from '@/components/organisms/CategoriesLinks'
-import OtherProducts from '@/components/organisms/OtherProducts'
-import ProductGallery from '@/components/organisms/ProductGallery'
+import ProductPage from '@/components/templates/ProductPage'
 import Params from '@/shared/interfaces/Params'
 import { Product } from '@/shared/interfaces/Product'
 import { getProductBySlug, getProductPaths } from '@/utils/product'
@@ -15,24 +8,7 @@ import React from 'react'
 const ProductItem: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
     product,
 }) => {
-    return (
-        <div className="w-full">
-            <div className="max-w-screen-xl mx-auto main-padding">
-                <GoBackButton />
-                <div className="grid md:grid-cols-2 gap-[125px] mt-[56px]">
-                    <ProductImage product={product} />
-                    <ProductDescription product={product} />
-                </div>
-                <div className="flex flex-col flex-wrap xl:flex-row mt-[120px] xl:mt-[160px]">
-                    <ProductFeatures product={product} />
-                    <ProductIncludes product={product} />
-                </div>
-                <ProductGallery product={product} />
-                <OtherProducts others={product.others} />
-                <CategoriesLinks />
-            </div>
-        </div>
-    )
+    return <ProductPage product={product} />
 }
 
 export default ProductItem
@@ -56,7 +32,7 @@ export const getStaticProps: GetStaticProps<ProductStaticProps> = async (
     context
 ) => {
     const params = context.params as Params
-    const product: Product = getProductBySlug(params.slug)
+    const product: Product | undefined = getProductBySlug(params.slug)
     return {
         props: {
             product,
