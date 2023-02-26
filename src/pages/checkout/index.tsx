@@ -29,7 +29,7 @@ const Checkout = () => {
         <div className="w-full bg-color-gray-dark ">
             <div className="max-w-screen-xl mx-auto main-padding">
                 <GoBackButton />
-                <div className="grid grid-cols-1 xl:grid-cols-3 gap-[30px] ">
+                <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-[30px] xl:gap-[30px]">
                     <div className="col-span-2 rounded-lg bg-color-white p-[48px]">
                         <form action="">
                             <h1 className="mb-[41px]">Checkout</h1>

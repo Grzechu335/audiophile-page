@@ -1,6 +1,7 @@
 import { Product } from '@/shared/interfaces/Product'
 import { useRouter } from 'next/router'
 import React from 'react'
+import BestGear from '../molecules/BestGear'
 import CategoriesLinks from '../organisms/CategoriesLinks'
 import ProductsList from '../organisms/ProductsList'
 
@@ -23,6 +24,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ products }) => {
             {/* Products */}
             <ProductsList products={products} />
             <CategoriesLinks />
+            <BestGear />
         </main>
     )
 }

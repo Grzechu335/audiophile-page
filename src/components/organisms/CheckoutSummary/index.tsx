@@ -9,7 +9,7 @@ const CheckoutSummary = () => {
     const allItems = useSelector(cartItems)
     const { total, tax, shipping, grandTotal } = useCheckoutTotals()
     return (
-        <div className="col-span-1 p-[32px] flex flex-col space-y-[24px] bg-color-white rounded-lg">
+        <div className="col-span-full xl:col-span-1 p-[32px] flex flex-col space-y-[24px] bg-color-white rounded-lg">
             <h6>summary</h6>
             {allItems.map(({ id, ...props }) => (
                 <CartItem

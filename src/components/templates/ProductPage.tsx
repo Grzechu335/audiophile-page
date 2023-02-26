@@ -5,6 +5,7 @@ import ProductDescription from '../atoms/Product/ProductDescription'
 import ProductFeatures from '../atoms/Product/ProductFeatures'
 import ProductImage from '../atoms/Product/ProductImage'
 import ProductIncludes from '../atoms/Product/ProductIncludes'
+import BestGear from '../molecules/BestGear'
 import CategoriesLinks from '../organisms/CategoriesLinks'
 import OtherProducts from '../organisms/OtherProducts'
 import ProductGallery from '../organisms/ProductGallery'
@@ -25,6 +26,7 @@ const ProductPage: React.FC<ProductAsProp> = ({ product }) => {
                 <ProductGallery product={product} />
                 <OtherProducts others={product.others} />
                 <CategoriesLinks />
+                <BestGear />
             </div>
         </div>
     )
