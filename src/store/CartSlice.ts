@@ -82,7 +82,7 @@ export const totalQuantity = (state: RootState): number => {
     return total
 }
 
-export const productsNumber = (state: RootState): number => {
+export const totalAmount = (state: RootState): number => {
     return state.cart.length
 }
 

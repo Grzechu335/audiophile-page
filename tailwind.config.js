@@ -26,6 +26,12 @@ module.exports = {
                     'second second third third third',
                 ],
                 'gallery-layout-slim': ['first', 'second', 'third', 'third'],
+                'checkout-layout-wide': ['label first', 'label second'],
+                'checkout-layout-slim': ['label', 'first', 'second'],
+            },
+            gridTemplateColumns: {
+                'checkout-layout-wide': '1fr 1fr',
+                'checkout-layout-slim': '1fr',
             },
         },
         variants: {

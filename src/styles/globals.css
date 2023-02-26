@@ -30,11 +30,17 @@
 }
 
 @layer components {
+    .custom-radio-button {
+        @apply w-[20px] cursor-pointer grid place-content-center h-[20px] border border-[#CFCFCF] rounded-full appearance-none before:scale-0 before:w-[10px] before:h-[10px] before:bg-color-orange-dark before:rounded-full before:checked:scale-100 before:transition ease-out duration-200;
+    }
     .categories-text {
         @apply text-[15px] uppercase leading-[20px] tracking-[1.07px] font-bold;
     }
     .bg-transparent {
         background-color: transparent;
+    }
+    .checkout-description {
+        @apply uppercase text-[12px] leading-[16px] tracking-[0.2px] font-bold;
     }
     .icon {
         @apply cursor-pointer hover:fill-color-orange-dark;

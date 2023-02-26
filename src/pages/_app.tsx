@@ -3,7 +3,6 @@ import Header from '@/components/organisms/Header'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Manrope } from '@next/font/google'
-import BestGear from '@/components/molecules/BestGear'
 import { Provider } from 'react-redux'
 const manrope = Manrope({
     subsets: ['latin'],
@@ -19,7 +18,6 @@ export default function App({ Component, pageProps }: AppProps) {
                 <Header />
                 <Cart />
                 <Component {...pageProps} />
-                <BestGear />
                 <Footer />
             </Provider>
         </main>

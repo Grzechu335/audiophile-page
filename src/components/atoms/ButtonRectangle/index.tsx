@@ -3,10 +3,15 @@ import clsx from 'clsx'
 
 interface ButtonProps {
     variant?: 'primary' | 'secondary' | 'transparent'
+    type?: 'normal' | 'full'
     children?: React.ReactNode
 }
 
-const Button: React.FC<ButtonProps> = ({ variant = 'primary', children }) => {
+const Button: React.FC<ButtonProps> = ({
+    variant = 'primary',
+    type = 'normal',
+    children,
+}) => {
     return (
         <button
             className={clsx(
@@ -18,6 +23,7 @@ const Button: React.FC<ButtonProps> = ({ variant = 'primary', children }) => {
                         variant === 'secondary',
                     'bg-transparent border border-black hover:bg-color-black hover:border-color-dark hover:text-color-white':
                         variant === 'transparent',
+                    'w-full': type === 'full',
                 }
             )}
         >

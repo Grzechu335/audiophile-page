@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux'
 import { navStatus } from '@/store/UISlice'
 const Header = (): JSX.Element => {
     const navState = useSelector(navStatus)
-    console.log(navState)
     return (
         <header className="w-full bg-[#181818] h-[96px]">
             <div className="flex items-center justify-between h-full max-w-screen-xl mx-auto border-b md:justify-start xl:justify-between border-b-color-white/20 main-padding">

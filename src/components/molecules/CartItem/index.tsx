@@ -6,12 +6,17 @@ import Image from 'next/image'
 import React from 'react'
 import { currencyFormat } from 'simple-currency-format'
 
-const CartItem: React.FC<CartItemProps> = ({
+interface CartProps extends CartItemProps {
+    type?: 'cart' | 'checkout'
+}
+
+const CartItem: React.FC<CartProps> = ({
     image,
     price,
     shortName,
     quantity,
     id,
+    type,
 }) => {
     const formattedPrice = currencyFormat(Number(price), 'en-US', 'USD')
     const dispatch = useAppDispatch()
@@ -30,12 +35,21 @@ const CartItem: React.FC<CartItemProps> = ({
                     {formattedPrice}
                 </p>
             </div>
-            <ProductQuantity
-                buttonType="small"
-                quantity={quantity}
-                decrementQuantity={() => dispatch(decreaseQuantity(id))}
-                incrementQuantity={() => dispatch(increaseQuantity(id))}
-            />
+
+            {type === 'cart' ? (
+                <ProductQuantity
+                    buttonType="small"
+                    quantity={quantity}
+                    decrementQuantity={() => dispatch(decreaseQuantity(id))}
+                    incrementQuantity={() => dispatch(increaseQuantity(id))}
+                />
+            ) : (
+                <div>
+                    <p className="font-extrabold text-color-black/50">
+                        x{quantity}
+                    </p>
+                </div>
+            )}
         </div>
     )
 }
