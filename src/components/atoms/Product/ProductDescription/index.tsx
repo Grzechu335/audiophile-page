@@ -1,9 +1,9 @@
-import { ProductAsProp } from '@/shared/interfaces/Product'
+import { ProductAsProp } from '@/shared/types/Product'
 import React, { useState } from 'react'
 import Button from '../../ButtonRectangle'
 import { currencyFormat } from 'simple-currency-format'
 import ProductQuantity from '../../ProductQuantity'
-import CartItem from '@/shared/interfaces/CartItem'
+import CartItem from '@/shared/types/CartItem'
 import { addItemToCart } from '@/store/CartSlice'
 import { useAppDispatch } from '@/hooks/redux'
 

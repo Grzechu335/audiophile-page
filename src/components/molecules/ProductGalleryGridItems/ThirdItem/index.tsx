@@ -1,4 +1,4 @@
-import { ProductAsProp } from '@/shared/interfaces/Product'
+import { ProductAsProp } from '@/shared/types/Product'
 import Image from 'next/image'
 import React from 'react'
 

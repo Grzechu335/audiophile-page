@@ -1,7 +1,7 @@
 import FirstGridItem from '@/components/molecules/ProductGalleryGridItems/FirstItem'
 import SecondGridItem from '@/components/molecules/ProductGalleryGridItems/SecondItem'
 import ThirdGridItem from '@/components/molecules/ProductGalleryGridItems/ThirdItem'
-import { ProductAsProp } from '@/shared/interfaces/Product'
+import { ProductAsProp } from '@/shared/types/Product'
 import React from 'react'
 
 const ProductGallery: React.FC<ProductAsProp> = ({ product }) => {

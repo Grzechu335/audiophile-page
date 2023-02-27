@@ -1,4 +1,4 @@
-import { Product } from '@/shared/interfaces/Product'
+import { Product } from '@/shared/types/Product'
 import React from 'react'
 import ProductDetails from '../ProductHomeDetails'
 

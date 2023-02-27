@@ -1,5 +1,5 @@
 import Button from '@/components/atoms/ButtonRectangle'
-import { Other } from '@/shared/interfaces/Product'
+import { Other } from '@/shared/types/Product'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'

@@ -1,5 +1,5 @@
 import Button from '@/components/atoms/ButtonRectangle'
-import { Product } from '@/shared/interfaces/Product'
+import { Product } from '@/shared/types/Product'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'

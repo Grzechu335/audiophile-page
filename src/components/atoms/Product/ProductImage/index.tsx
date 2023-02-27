@@ -1,4 +1,4 @@
-import { CategoryImage } from '@/shared/interfaces/Product'
+import { CategoryImage } from '@/shared/types/Product'
 import Image from 'next/image'
 import React from 'react'
 

@@ -1,6 +1,6 @@
 import ProductQuantity from '@/components/atoms/ProductQuantity'
 import { useAppDispatch } from '@/hooks/redux'
-import CartItemProps from '@/shared/interfaces/CartItem'
+import CartItemProps from '@/shared/types/CartItem'
 import { decreaseQuantity, increaseQuantity } from '@/store/CartSlice'
 import Image from 'next/image'
 import React from 'react'

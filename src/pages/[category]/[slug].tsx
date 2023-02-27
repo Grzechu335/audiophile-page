@@ -1,6 +1,6 @@
 import ProductPage from '@/components/templates/ProductPage'
-import Params from '@/shared/interfaces/Params'
-import { Product } from '@/shared/interfaces/Product'
+import Params from '@/shared/types/Params'
+import { Product } from '@/shared/types/Product'
 import { getProductBySlug, getProductPaths } from '@/utils/product'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import React from 'react'

@@ -4,13 +4,17 @@ import clsx from 'clsx'
 interface ButtonProps {
     variant?: 'primary' | 'secondary' | 'transparent'
     type?: 'normal' | 'full'
+    submit?: boolean
     children?: React.ReactNode
+    formId?: string
 }
 
 const Button: React.FC<ButtonProps> = ({
     variant = 'primary',
     type = 'normal',
     children,
+    submit = false,
+    formId: form,
 }) => {
     return (
         <button
@@ -26,6 +30,8 @@ const Button: React.FC<ButtonProps> = ({
                     'w-full': type === 'full',
                 }
             )}
+            type={submit ? 'submit' : 'button'}
+            form={form}
         >
             {children}
         </button>

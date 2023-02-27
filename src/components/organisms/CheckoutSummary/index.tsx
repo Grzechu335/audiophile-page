@@ -41,7 +41,12 @@ const CheckoutSummary = () => {
                     {grandTotal}
                 </p>
             </div>
-            <Button>Continue & Pay</Button>
+            <Button
+                submit
+                formId="checkoutform"
+            >
+                Continue & Pay
+            </Button>
         </div>
     )
 }

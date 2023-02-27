@@ -1,6 +1,6 @@
 import CategoryPage from '@/components/templates/CategoryPage'
-import Params from '@/shared/interfaces/Params'
-import { Product } from '@/shared/interfaces/Product'
+import Params from '@/shared/types/Params'
+import { Product } from '@/shared/types/Product'
 import { getCategories, getProductsByCategory } from '@/utils/product'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'

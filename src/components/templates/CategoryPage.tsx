@@ -1,4 +1,4 @@
-import { Product } from '@/shared/interfaces/Product'
+import { Product } from '@/shared/types/Product'
 import { useRouter } from 'next/router'
 import React from 'react'
 import BestGear from '../molecules/BestGear'

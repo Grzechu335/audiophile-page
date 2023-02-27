@@ -1,4 +1,4 @@
-import { Include } from '@/shared/interfaces/Product'
+import { Include } from '@/shared/types/Product'
 import React from 'react'
 
 type ProductIncludesProps = {

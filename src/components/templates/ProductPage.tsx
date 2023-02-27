@@ -1,4 +1,4 @@
-import { ProductAsProp } from '@/shared/interfaces/Product'
+import { ProductAsProp } from '@/shared/types/Product'
 import React from 'react'
 import GoBackButton from '../atoms/GoBackButton'
 import ProductDescription from '../atoms/Product/ProductDescription'

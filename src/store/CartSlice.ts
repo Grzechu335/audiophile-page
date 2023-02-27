@@ -1,5 +1,5 @@
 import { RootState } from './index'
-import CartItem from '@/shared/interfaces/CartItem'
+import CartItem from '@/shared/types/CartItem'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 type CartSliceType = CartItem[]

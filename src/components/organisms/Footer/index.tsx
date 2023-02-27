@@ -5,7 +5,7 @@ import FooterLinks from '../FooterLinks'
 
 const Footer: React.FC = () => {
     return (
-        <footer className="w-full bg-color-black mt-[120px] md:mt-[96px] xl:mt-[200px] py-[52px] md:py-[60px] xl:py-[75px]">
+        <footer className="w-full bg-color-black  py-[52px] md:py-[60px] xl:py-[75px]">
             <div className="relative max-w-screen-xl mx-auto text-center main-padding md:text-start">
                 <span className="absolute transform md:transform-none translate-x-[-50%] bg-color-orange-dark left-1/2 md:left-0 top-[-52px] md:top-[-60px] xl:top-[-75px] w-1/4 md:w-[101px] h-[4px]" />
                 <div className="flex flex-col items-center md:items-start xl:flex-row xl:justify-between space-y-[48px] md:space-y-[32px] xl:space-y-0">

@@ -5,6 +5,8 @@ import CheckoutSummary from '@/components/organisms/CheckoutSummary'
 import { useState } from 'react'
 import CashOnDeliveryIcon from 'public/images/checkout/icon-cash-on-delivery.svg'
 import Image from 'next/image'
+import { useForm, SubmitHandler } from 'react-hook-form'
+import Inputs from '@/shared/types/Inputs'
 const radioOptions = [
     {
         id: 0,
@@ -18,20 +20,27 @@ const radioOptions = [
     },
 ]
 const Checkout = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<Inputs>()
+    const onSubmit: SubmitHandler<Inputs> = (data) => {}
     const [selectedRadio, setSelectedRadio] = useState(radioOptions[0].label)
     const changeRadioValue = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setSelectedRadio(e.target.value)
-        console.log(e.target.value)
     }
-    console.log(selectedRadio)
 
     return (
-        <div className="w-full bg-color-gray-dark ">
+        <div className="w-full bg-color-gray-dark pb-[141px]">
             <div className="max-w-screen-xl mx-auto main-padding">
                 <GoBackButton />
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-[30px] xl:gap-[30px]">
                     <div className="col-span-2 rounded-lg bg-color-white p-[48px]">
-                        <form action="">
+                        <form
+                            onSubmit={handleSubmit(onSubmit)}
+                            id="checkoutform"
+                        >
                             <h1 className="mb-[41px]">Checkout</h1>
                             <fieldset className="mb-[53px]">
                                 <h6 className="font-extrabold custom-sub-title text-color-orange-dark mb-[16px]">
@@ -41,16 +50,32 @@ const Checkout = () => {
                                     <FormField
                                         label="Name"
                                         placeholder="Alexei Ward"
+                                        {...register('name', {
+                                            required: 'Field cannot be empty',
+                                        })}
+                                        errors={errors.name}
                                     />
                                     <FormField
                                         label="Email address"
                                         placeholder="alexeiward@mail.com"
                                         type="email"
+                                        {...register('email', {
+                                            required: 'Field cannot be empty',
+                                            pattern: {
+                                                value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                                                message: 'Wrong format',
+                                            },
+                                        })}
+                                        errors={errors.email}
                                     />
                                     <FormField
                                         label="Phone number"
                                         placeholder="+1 202-555-0136"
                                         type="tel"
+                                        {...register('phoneNumber', {
+                                            required: 'Field cannot be empty',
+                                        })}
+                                        errors={errors.phoneNumber}
                                     />
                                 </div>
                             </fieldset>
@@ -63,18 +88,38 @@ const Checkout = () => {
                                         label="Address"
                                         placeholder="2137 Williams Avenue"
                                         full
+                                        {...register('address', {
+                                            required: 'Field cannot be empty',
+                                        })}
+                                        errors={errors.address}
                                     />
                                     <FormField
                                         label="ZIP Code"
                                         placeholder="10001"
+                                        {...register('zipCode', {
+                                            required: 'Field cannot be empty',
+                                            pattern: {
+                                                value: /^[0-9]{5}(?:-[0-9]{4})?$/,
+                                                message: 'Wrong format',
+                                            },
+                                        })}
+                                        errors={errors.zipCode}
                                     />
                                     <FormField
                                         label="City"
                                         placeholder="New York"
+                                        {...register('city', {
+                                            required: 'Field cannot be empty',
+                                        })}
+                                        errors={errors.city}
                                     />
                                     <FormField
                                         label="Country"
                                         placeholder="United States"
+                                        {...register('country', {
+                                            required: 'Field cannot be empty',
+                                        })}
+                                        errors={errors.country}
                                     />
                                 </div>
                             </fieldset>
@@ -112,11 +157,25 @@ const Checkout = () => {
                                                 type="number"
                                                 label="e-Money Number"
                                                 placeholder="238521993"
+                                                {...register('eMoneyNumber', {
+                                                    required:
+                                                        'Field cannot be empty',
+                                                    pattern: {
+                                                        value: /^[0-9]{4}$/,
+                                                        message: 'Wrong format',
+                                                    },
+                                                })}
+                                                errors={errors.eMoneyNumber}
                                             />
                                             <FormField
                                                 type="number"
                                                 label="e-Money PIN"
                                                 placeholder="6891"
+                                                {...register('eMonyPin', {
+                                                    required:
+                                                        'Field cannot be empty',
+                                                })}
+                                                errors={errors.eMonyPin}
                                             />
                                         </>
                                     ) : (

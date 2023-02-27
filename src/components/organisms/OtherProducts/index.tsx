@@ -1,5 +1,5 @@
 import OtherProductItem from '@/components/molecules/OtherProductItem'
-import { Other } from '@/shared/interfaces/Product'
+import { Other } from '@/shared/types/Product'
 import React from 'react'
 
 export type OtherProductsProps = {

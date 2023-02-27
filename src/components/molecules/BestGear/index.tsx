@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const BestGear: React.FC = () => {
     return (
-        <div className="w-full mt-[63px] md:mt-[200px]">
+        <div className="w-full mt-[63px] md:mt-[200px] pb-[120px] xl:pb-[160px]">
             <div className="grid max-w-screen-xl mx-auto xl:grid-cols-2 main-padding">
                 <div className="  md:w-[573px] mx-auto xl:mx-0 xl:w-[445px] flex flex-col items-center justify-center order-2 xl:order-1">
                     <h2 className="text-center text-color-dark xl:text-start">
