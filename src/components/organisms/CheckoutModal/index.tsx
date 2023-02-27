@@ -15,7 +15,7 @@ const CheckoutModal = () => {
     const allItems = useSelector(cartItems)
     const router = useRouter()
     return (
-        <div className="absolute left-0 justify-center top-[96px] w-full h-full bg-color-black/40">
+        <div className="absolute left-0 justify-center top-[96px] w-full h-full bg-color-black/40 overflow-x-hidden">
             <div className="max-w-screen-xl mx-auto main-padding">
                 <div className="bg-color-white mt-[125px] rounded-lg p-[48px] flex  flex-col space-y-[23px] md:space-y-[46px] mx-auto max-w-[540px]">
                     <Image
@@ -31,18 +31,31 @@ const CheckoutModal = () => {
                         You will receive an email confirmation shortly.
                     </p>
                     <div className="flex flex-col md:flex-row">
-                        <div className="p-[24px] bg-color-gray-dark flex flex-col space-y-[12px] flex-grow rounded-t-lg md:rounded-l-lg">
-                            {allItems.slice(1).map((item) => (
-                                <CartItem
-                                    key={item.id}
-                                    type="modal"
-                                    {...item}
-                                />
-                            ))}
-                            <span className="block w-full h-[1px] bg-color-black/[0.08]"></span>
-                            <p className="text-center checkout-description text-color-black/50">
-                                and {allItems.length} other items(s)
-                            </p>
+                        <div className="p-[24px] bg-color-gray-dark flex flex-col justify-center space-y-[12px] flex-grow rounded-t-lg md:rounded-l-lg">
+                            {allItems.length > 1
+                                ? allItems.slice(1).map((item) => (
+                                      <CartItem
+                                          key={item.id}
+                                          type="modal"
+                                          {...item}
+                                      />
+                                  ))
+                                : allItems.map((item) => (
+                                      <CartItem
+                                          key={item.id}
+                                          type="modal"
+                                          {...item}
+                                      />
+                                  ))}
+                            {allItems.length > 1 && (
+                                <>
+                                    <span className="block w-full h-[1px] bg-color-black/[0.08]"></span>
+
+                                    <p className="text-center checkout-description text-color-black/50">
+                                        and {allItems.length} other items(s)
+                                    </p>
+                                </>
+                            )}
                         </div>
                         <div className="bg-color-black flex flex-col p-[32px] justify-center rounded-b-lg md:rounded-r-lg">
                             <p className="custom-sub-title text-color-white/50">
