@@ -2,12 +2,13 @@ import ProductQuantity from '@/components/atoms/ProductQuantity'
 import { useAppDispatch } from '@/hooks/redux'
 import CartItemProps from '@/shared/types/CartItem'
 import { decreaseQuantity, increaseQuantity } from '@/store/CartSlice'
+import clsx from 'clsx'
 import Image from 'next/image'
 import React from 'react'
 import { currencyFormat } from 'simple-currency-format'
 
 interface CartProps extends CartItemProps {
-    type?: 'cart' | 'checkout'
+    type?: 'cart' | 'checkout' | 'modal'
 }
 
 const CartItem: React.FC<CartProps> = ({
@@ -21,11 +22,16 @@ const CartItem: React.FC<CartProps> = ({
     const formattedPrice = currencyFormat(Number(price), 'en-US', 'USD')
     const dispatch = useAppDispatch()
     return (
-        <div className="flex items-center space-x-[16px]">
+        <div
+            className={clsx('flex space-x-[16px]', {
+                'items-start': type === 'modal',
+                'items-center': type === 'checkout' || type === 'cart',
+            })}
+        >
             <Image
                 src={image}
-                width={64}
-                height={64}
+                width={type === 'modal' ? 50 : 64}
+                height={type === 'modal' ? 50 : 64}
                 alt="item image"
                 className="rounded-lg"
             />
