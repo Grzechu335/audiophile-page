@@ -2,13 +2,16 @@ import GoBackButton from '@/components/atoms/GoBackButton'
 import Radio from '@/components/atoms/Radio'
 import FormField from '@/components/molecules/FromField'
 import CheckoutSummary from '@/components/organisms/CheckoutSummary'
-import { useState } from 'react'
-import CashOnDeliveryIcon from 'public/images/checkout/icon-cash-on-delivery.svg'
-import Image from 'next/image'
-import { useForm, SubmitHandler } from 'react-hook-form'
-import Inputs from '@/shared/types/Inputs'
 import { useAppDispatch } from '@/hooks/redux'
+import useCheckoutTotals from '@/hooks/useCheckoutTotals'
+import Inputs from '@/shared/types/Inputs'
+import { cartItems } from '@/store/CartSlice'
 import { setModal } from '@/store/ModalSlice'
+import Image from 'next/image'
+import CashOnDeliveryIcon from 'public/images/checkout/icon-cash-on-delivery.svg'
+import { useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { useSelector } from 'react-redux'
 const radioOptions = [
     {
         id: 0,
@@ -23,6 +26,8 @@ const radioOptions = [
 ]
 const CheckoutPage = () => {
     const dispatch = useAppDispatch()
+    const allItems = useSelector(cartItems)
+    const { grandTotal } = useCheckoutTotals()
     const {
         register,
         handleSubmit,
@@ -34,8 +39,18 @@ const CheckoutPage = () => {
         setSelectedRadio(e.target.value)
     }
 
-    const submitFunction = () => {
+    const submitFunction: SubmitHandler<Inputs> = async (data) => {
         dispatch(setModal(true))
+        const dataToSend = {
+            items: allItems,
+            customerData: data,
+            totalPrice: grandTotal,
+        }
+        const response = await fetch('/api/mailsender', {
+            method: 'POST',
+            body: JSON.stringify(dataToSend),
+        }).then((res) => res.json())
+        console.log(response)
     }
     return (
         <div className="w-full bg-color-gray-dark pb-[141px]">
