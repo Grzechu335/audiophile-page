@@ -9,7 +9,7 @@ import { cartItems } from '@/store/CartSlice'
 import { setModal } from '@/store/ModalSlice'
 import Image from 'next/image'
 import CashOnDeliveryIcon from 'public/images/checkout/icon-cash-on-delivery.svg'
-import { useState } from 'react'
+import { createRef, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useSelector } from 'react-redux'
 const radioOptions = [
@@ -25,6 +25,7 @@ const radioOptions = [
     },
 ]
 const CheckoutPage = () => {
+    const divRef = createRef<HTMLDivElement>()
     const dispatch = useAppDispatch()
     const allItems = useSelector(cartItems)
     const { grandTotal } = useCheckoutTotals()
@@ -33,14 +34,15 @@ const CheckoutPage = () => {
         handleSubmit,
         formState: { errors },
     } = useForm<Inputs>()
-    // const onSubmit: SubmitHandler<Inputs> = (data) => {}
     const [selectedRadio, setSelectedRadio] = useState(radioOptions[0].label)
     const changeRadioValue = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setSelectedRadio(e.target.value)
     }
 
-    const submitFunction: SubmitHandler<Inputs> = async (data) => {
+    const submitFunction: SubmitHandler<Inputs> = async (data, e) => {
+        e?.preventDefault()
         dispatch(setModal(true))
+        divRef.current?.scrollIntoView({ behavior: 'smooth' })
         const dataToSend = {
             items: allItems,
             customerData: data,
@@ -50,17 +52,20 @@ const CheckoutPage = () => {
             method: 'POST',
             body: JSON.stringify(dataToSend),
         }).then((res) => res.json())
-        console.log(response)
     }
     return (
         <div className="w-full bg-color-gray-dark pb-[141px]">
-            <div className="max-w-screen-xl mx-auto main-padding">
+            <div
+                className="max-w-screen-xl mx-auto main-padding"
+                ref={divRef}
+            >
                 <GoBackButton />
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-[30px] xl:gap-[30px]">
                     <div className="col-span-2 rounded-lg bg-color-white p-[48px]">
                         <form
                             onSubmit={handleSubmit(submitFunction)}
                             id="checkoutform"
+                            noValidate
                         >
                             <h1 className="mb-[41px]">Checkout</h1>
                             <fieldset className="mb-[53px]">

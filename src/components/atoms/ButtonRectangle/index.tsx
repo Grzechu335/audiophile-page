@@ -7,6 +7,7 @@ interface ButtonProps {
     submit?: boolean
     children?: React.ReactNode
     formId?: string
+    disabled?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -15,6 +16,7 @@ const Button: React.FC<ButtonProps> = ({
     children,
     submit = false,
     formId: form,
+    disabled,
 }) => {
     return (
         <button
@@ -32,6 +34,7 @@ const Button: React.FC<ButtonProps> = ({
             )}
             type={submit ? 'submit' : 'button'}
             form={form}
+            disabled={disabled}
         >
             {children}
         </button>

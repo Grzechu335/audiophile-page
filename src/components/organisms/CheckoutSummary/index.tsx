@@ -44,6 +44,7 @@ const CheckoutSummary = () => {
             <Button
                 submit
                 formId="checkoutform"
+                disabled={allItems.length === 0}
             >
                 Continue & Pay
             </Button>

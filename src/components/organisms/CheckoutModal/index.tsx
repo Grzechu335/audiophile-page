@@ -52,7 +52,7 @@ const CheckoutModal = () => {
                                     <span className="block w-full h-[1px] bg-color-black/[0.08]"></span>
 
                                     <p className="text-center checkout-description text-color-black/50">
-                                        and {allItems.length} other items(s)
+                                        and {allItems.length - 1} other items(s)
                                     </p>
                                 </>
                             )}
