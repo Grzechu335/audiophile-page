@@ -51,7 +51,7 @@ export default async function mailSender(
         ${data.items.map(
             ({ shortName, quantity, price }) =>
                 `<li>
-                    Product: ${shortName},<br/> Quantity: x${quantity}, </br> Price: $${price},
+                    Product: ${shortName},<br/> Quantity: x${quantity}, </br> Price: $${price}
                 </li>`
         )}
         </ul>
