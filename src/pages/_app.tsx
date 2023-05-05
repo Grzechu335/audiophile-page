@@ -8,17 +8,23 @@ const manrope = Manrope({
     subsets: ['latin'],
     variable: '--font-manrope',
 })
-import { store } from '@/store'
 import Cart from '@/components/organisms/Cart'
+import { persistor, store } from '@/store'
+import { PersistGate } from 'redux-persist/integration/react'
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <main className={`${manrope.variable}`}>
             <Provider store={store}>
-                <Header />
-                <Cart />
-                <Component {...pageProps} />
-                <Footer />
+                <PersistGate
+                    loading={null}
+                    persistor={persistor}
+                >
+                    <Header />
+                    <Cart />
+                    <Component {...pageProps} />
+                    <Footer />
+                </PersistGate>
             </Provider>
         </main>
     )

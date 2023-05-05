@@ -19,6 +19,12 @@
             "@/*": ["./src/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "prettierrc.js"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "prettierrc.js",
+        "src/utils/storage.js"
+    ],
     "exclude": ["node_modules"]
 }
