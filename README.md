@@ -1,38 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align='center'>
+    <h1>Audiophile Page</h1>
+    <p><i>Designed by Frontend Mentor</i></p>
+    <p><a href='https://audiophile-page.vercel.app/'>DEMO</a></p>
+    <div>
+        <img src='https://img.shields.io/github/deployments/grzechu335/audiophile-page/production?style=for-the-badge'/>
+        <img src='https://img.shields.io/github/license/grzechu335/audiophile-page?style=for-the-badge'/>
+        <img src='https://img.shields.io/github/languages/top/grzechu335/audiophile-page?style=for-the-badge'/>
+        <img src='https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white'/>
+    </div>
+</div>
+
+<!-- Table of contents  -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About the Project</a></li>
+    <li><a href="#project-screen-shot">Project Screen Shot</a></li>
+    <li><a href="#technologies">Technologies</a></li>
+    <li><a href="#getting-started">Getting started</a></li>
+  </ol>
+  </details>
+
+## About the Project
+
+The Audiophile page is an online store application specializing in audio equipment. It provides users with the ability to browse various products and make purchases (without actual payment processing). To effectively manage the application's state, the Redux library was utilized. Once users complete their purchases and provide the necessary information, a concise summary message will be sent to the email address they provided.
+
+## Project Screen Shot
+
+![ScreenShotURL]
+
+## Technologies
+
+-   ![TypeScriptBadge]
+-   ![ReactBadge]
+-   ![NextJSBadge]
+-   ![reduxbadge]
+-   ![nodejsbadge]
+-   ![TailwindCSSBadge]
 
 ## Getting Started
 
-First, run the development server:
+1. Clone repo by entering the command
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```sh
+git clone https://github.com/Grzechu335/audiophile-page
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install NPM packages (you will need node and npm installed globally on your machine)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```sh
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Run command on local environment
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. To visit app:
 
-## Learn More
+```
+http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Licence
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Distributed under the MIT License. See LICENSE.txt for more information.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<!-- Links -->
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[typescriptbadge]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white
+[reactbadge]: https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
+[nextjsbadge]: https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white
+[tailwindcssbadge]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[nodejsbadge]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
+[reduxbadge]: https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white
+[screenshoturl]: /public/screenshot/screenshot.png
